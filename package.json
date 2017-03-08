@@ -1,0 +1,23 @@
+{
+  "name": "webpackdox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "4.0.6",
+    "handlebars-helpers": "0.8.0",
+    "handlebars-loader": "git+https://github.com/craig-mulligan/handlebars-loader.git",
+    "marked": "0.3.6",
+    "static-site-generator-webpack-plugin": "3.3.0",
+    "webpack": "2.2.1"
+  },
+  "devDependencies": {
+    "frontmatter-loader": "0.0.1",
+    "webpack": "1.13.1"
+  }
+}
