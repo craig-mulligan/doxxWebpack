@@ -1,8 +1,11 @@
 const marked = require('marked');
-const _ = require('lodash');
-const req = require.context('./test', true, /(md)$/);
+const pick = require('lodash/pick');
+const values = require('lodash/values')
 const utils = require('./utils');
-const dicts = require("./config").dicts
+
+const req = require.context('./pages', true, /(md)$/);
+
+const dicts = require("./config").dicts;
 const routes = {}
 
 req.keys().map((key) => {
@@ -10,17 +13,17 @@ req.keys().map((key) => {
   if (instance.attributes.dynamic) {
     const dynamicVars = instance.attributes.dynamic.variables
     // only get dicts that are declared in front-matter
-    const dynamicDict = _.pick(dicts, dynamicVars)
+    const dynamicDict = pick(dicts, dynamicVars)
     // get all possible combinations of dicts
-    const combos = utils.cartesian(_.values(dynamicDict))
+    const combos = utils.cartesian(values(dynamicDict))
     // generate page for every combo
     combos.map(a => {
       const context = utils.buildContext(a, dynamicVars)
       path = a.map(p => p.id).join('/')
-      routes[path] = marked(instance.fn(context))
+      routes[path] = marked(instance.compile(context))
     })
   } else {
-    routes[utils.fileName(key)] = marked(instance.fn())
+    routes[utils.fileName(key)] = marked(instance.compile())
   }
 });
 

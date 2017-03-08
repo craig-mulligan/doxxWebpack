@@ -1,3 +1,5 @@
 # Hello world!
 
-{{> partial}}
+{{> myPartial}}
+
+hmppf
