@@ -1,7 +1,8 @@
-WIP convert doxx to webpack.
+WIP convert doxx to webpack
 
-current issue:
-Can't pass and object back from handlebars-loader as the
+```
+npm i && webpack -d
+```
 
 todos
 
@@ -11,7 +12,6 @@ todos
 - [ ] Smart imports.. hmmmmmmm.
 - [ ] loader helpers
 - [ ] respect $ref path
-- [ ] use front matter to export multiple pages for dynamic pages
 - [ ] use react for templates
 
 
