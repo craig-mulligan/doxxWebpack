@@ -35,12 +35,7 @@ module.exports = {
     },
     plugins: [
       new StaticSiteGeneratorPlugin({
-
-        locals: {
-          // Properties here are merged into `locals`
-          // passed to the exported render function
-          greet: 'Hello'
-        }
+        locals: require('./config.js')
       })
     ]
 };

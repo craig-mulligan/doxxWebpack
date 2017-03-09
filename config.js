@@ -1,4 +1,8 @@
 module.exports = {
+  locals: {
+    siteName: 'doxx',
+    greeting: 'Welcome to '
+  },
   dicts: {
     '$os': [
       {

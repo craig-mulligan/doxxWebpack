@@ -25,7 +25,9 @@ const buildContext = (dynamicVars, keys) => {
 const fileName = (path) => {
   const file = path.split("/").pop();
   // hacky for .md
-  return file.slice(0, -3);
+  const filename = file.slice(0, -3);
+  // hack to render 'index.html' instead of '/index/index.html'
+  return filename === 'index' ? '/' : filename
 }
 
 module.exports = {
